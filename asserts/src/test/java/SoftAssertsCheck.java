@@ -3,6 +3,7 @@ import org.testng.asserts.SoftAssert;
 
 public class SoftAssertsCheck {
 
+    // NOTE - For best exception logging use testng version >= 6.9.10
     @Test
     public void allAssertsShouldBeDoneBeforeTestFail() {
 

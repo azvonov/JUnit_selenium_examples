@@ -13,12 +13,18 @@
         <module>rules</module>
         <module>parametres</module>
         <module>asserts</module>
+        <module>before</module>
     </modules>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.53.1</version>
         </dependency>
     </dependencies>
 </project>
