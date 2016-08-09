@@ -17,7 +17,7 @@ public class BeforeTestExample {
     @Test
     public void demoTest (){}
 
- //   @Test
+    @Test
     public void demoTest2 (){}
 
     @After

@@ -50,7 +50,7 @@ public class Matchers {
         assertThat(colors, hasItem(myColor));
         assertThat(colors, hasItems("green","red"));
         assertThat(colors, hasItems(anyOf(is("red"),is("Red)"))));
-        assertThat("red,green,blue", either(containsString("yellow")).or(containsString("red")));
+        assertThat(colors.toString(), either(containsString("yellow")).or(containsString("red")));
         assertThat(colors, everyItem(containsString("e")));
     }
 
@@ -74,18 +74,18 @@ public class Matchers {
 
     @Test
     public void hasPropertyAndCustomMatchers() {
-        List<Stakeholder> stackeHolders = new ArrayList<Stakeholder>();
-        stackeHolders.add(new Stakeholder("Health Care"){});
-        stackeHolders.add(new Stakeholder("Auto Service"));
+        List<Client> stakeHolders = new ArrayList<Client>();
+        stakeHolders.add(new Client("Health Care"){});
+        stakeHolders.add(new Client("Auto Service"));
 
-        Matcher<Stakeholder> calledHealthCare = hasProperty("name",is("Health Care"));
+        Matcher<Client> calledHealthCare = hasProperty("name",is("Health Care"));
 
-        assertThat(stackeHolders,hasItems(calledHealthCare));
+        assertThat(stakeHolders,hasItems(calledHealthCare));
     }
 
-    public class Stakeholder {
+    public class Client {
         private String name;
-        public Stakeholder(String name){
+        public Client(String name){
             this.name = name;
         }
         public String getName() {

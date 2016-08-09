@@ -5,6 +5,9 @@ import org.junit.rules.ErrorCollector;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 public class UsesErrorCollector {
+    //Собирает все ошибки на протяжении теста. После окончания теста выводит лог.
+    //Таким образом тест не валится на первом неудачном ассерте и видна вся картина
+
     @Rule
     public ErrorCollector collector = new ErrorCollector();
 

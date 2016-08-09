@@ -14,12 +14,12 @@ public class BaseTest {
     @BeforeClass
     public static void setUpClass() throws Exception {
        driver = new FirefoxDriver();
-        System.out.println(++i + " - Base setUpClass");
+        System.out.println(++i + " - Base BeforeClass");
     }
 
     @Before
     public void setUp() throws Exception {
-        System.out.println(++i + " - Base setUp");
+        System.out.println(++i + " - Base BeforeTest");
     }
 
     @After

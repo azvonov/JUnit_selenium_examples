@@ -9,7 +9,7 @@ import tests.TestSample;
 
 @RunWith(Categories.class)
 @Categories.IncludeCategory(SlowTests.class)
-@Suite.SuiteClasses( { TestExample.class, TestSample.class })
+@Suite.SuiteClasses( {TestExample.class, TestSample.class })
 public class SlowTestsSuite {
 }
 

@@ -12,7 +12,6 @@ public class TestClass extends BaseTest{
     public void setUp() throws Exception {
         System.out.println(++i + " - BeforeTestMethod");
         super.setUp();
-
     }
 
     @Test

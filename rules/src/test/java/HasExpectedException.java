@@ -5,6 +5,8 @@ import org.junit.rules.ExpectedException;
 import static org.hamcrest.CoreMatchers.startsWith;
 
 public class HasExpectedException {
+    //Игнорирует возникновение ожидаемых ошибок
+
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 

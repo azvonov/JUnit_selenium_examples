@@ -7,6 +7,7 @@ import org.hamcrest.TypeSafeMatcher;
 import java.util.Collection;
 
 public class HasSizeMatcher extends TypeSafeMatcher<Collection<? extends  Object>> {
+
     private Matcher<Integer> matcher;
 
     public HasSizeMatcher(Matcher<Integer> matcher){

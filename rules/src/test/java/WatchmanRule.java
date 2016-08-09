@@ -8,6 +8,10 @@ import static junit.framework.TestCase.fail;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class WatchmanRule {
+
+    //добавляет указанное действие после окончания теста
+    //в зависимоти от результата теста, действия могут быть разные
+
     public static String watchLog = "";
 
     @Rule

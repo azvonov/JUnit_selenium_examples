@@ -10,20 +10,24 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class VerifierRule {
+    //После успешного прохождения тестов проверяет некоторое заданное условие
+    //В случае невыполнения условия валит тесты
+
     private List<String> systemErrorMessages = new ArrayList<String>();
     @Rule
-    public TestRule verifier = new Verifier(){
+    public TestRule verifier = new Verifier() {
         @Override
         protected void verify() throws Throwable {
             assertThat(systemErrorMessages.size(), is(0));
         }
     };
-  @Test
-  public void afterThisTestVerifyerShouldCheckSizeOfMessages (){
-  }
 
-  @Test
-  public void afterThisTestVeryfierShouldCheckSizeOfMessagesAgain (){
-      systemErrorMessages.add("error message");
-  }
+    @Test
+    public void afterThisTestVerifyerShouldCheckSizeOfMessages() {
+    }
+
+    @Test
+    public void afterThisTestVeryfierShouldCheckSizeOfMessagesAgain() {
+        systemErrorMessages.add("error message");
+    }
 }

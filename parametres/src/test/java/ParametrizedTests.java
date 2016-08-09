@@ -1,5 +1,5 @@
-import org.junit.After;
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -13,7 +13,7 @@ import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(value = Parameterized.class)
+@RunWith(Parameterized.class)
 public class ParametrizedTests {
 
     private static WebDriver driver;
@@ -44,51 +44,35 @@ public class ParametrizedTests {
         this.bmiCategory = bmiCategory;
     }
 
-    @Before
-    public void setUp() {
-        // Create a new instance of the Firefox driver
+    @BeforeClass
+    public static void setUp() {
         driver = new FirefoxDriver();
         driver.get("http://dl.dropbox.com/u/55228056/bmicalculator.html");
     }
         @Test
         public void testBMICalculator ()throws Exception {
-            //Get the Height element and set the value using parameterised
-            //height variable
+
             WebElement heightField = driver.findElement(By.name("heightCMS"));
             heightField.clear();
             heightField.sendKeys(height);
 
-            //Get the Weight element and set the value using parameterised
-            //Weight variable
             WebElement weightField = driver.findElement(By.name("weightKg"));
             weightField.clear();
             weightField.sendKeys(weight);
 
-            //Click on Calculate Button
             WebElement calculateButton = driver.findElement(By.id("Calculate"));
             calculateButton.click();
-            try {
-                //Get the Bmi element and verify its value using parameterised
-                //bmi variable
-                WebElement bmiLabel = driver.findElement(By.name("bmi"));
-                assertEquals(bmi, bmiLabel.getAttribute("value"));
 
-                //Get the Bmi Category element and verify its value using
-                //parameterised bmiCategory variable
-                WebElement bmiCategoryLabel = driver.findElement(By.name("bmi_category"));
-                assertEquals(bmiCategory, bmiCategoryLabel.
-                        getAttribute("value"));
+            WebElement bmiLabel = driver.findElement(By.name("bmi"));
+            assertEquals(bmi, bmiLabel.getAttribute("value"));
+            WebElement bmiCategoryLabel = driver.findElement(By.name("bmi_category"));
+            assertEquals(bmiCategory, bmiCategoryLabel.
+                    getAttribute("value"));
 
-            } catch (Error e) {
-                //Capture and append Exceptions/Errors
-                verificationErrors.append(e.toString());
-                System.err.println("Assertion Fail " + verificationErrors.
-                        toString());
-            }
         }
 
-    @After
-    public void tearDown() throws Exception {
+    @AfterClass
+    public static void tearDown() throws Exception {
         driver.quit();
     }
 }
