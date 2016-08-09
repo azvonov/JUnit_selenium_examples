@@ -30,9 +30,9 @@ public class TaxCalculatorDataTest {
     public TaxCalculatorDataTest(Double income, Double expectedTax) {
         this.income = income;
         this.expectedTax = expectedTax;
-        mockingRiles();
+        mockingRules();
     }
-    private void mockingRiles(){
+    private void mockingRules(){
         when(mockedTaxCalculator.calculateTax(0.00)).thenReturn(0.00);
         when(mockedTaxCalculator.calculateTax(10000.00)).thenReturn(1252.00);
         when(mockedTaxCalculator.calculateTax(1400.00)).thenReturn(1750.00);
